@@ -1,17 +1,27 @@
-//
-// This is only a SKELETON file for the "Bob" exercise. It's been provided as a
-// convenience to get you started writing code faster.
-// Make sure to look at test.script.js--that should give you some hints about what is
-// expected here.
+var Bob = function() { };
 
-'use strict';
+  var isShouting = function(input) {
+    return input.toUpperCase() === input && input.toLowerCase() !== input;
+  };
 
-var Bob = function() {};
+  var isQuestion = function(input) {
+    return input.charAt(input.length - 1) === '?';
+  };
 
-Bob.prototype.hey = function(input) {
-//
-// YOUR CODE GOES HERE
-//
-};
+  this.hey = function(input) {
+    if (isSilentTreatment(input)) {
+      return 'Fine. Be that way!';
+    }
+
+    if (isShouting(input)) {
+      return 'Whoa, chill out!';
+    }
+
+    if (isQuestion(input)) {
+      return 'Sure.';
+    }
+
+    return 'Whatever.';
+  };
 
 module.exports = Bob;
